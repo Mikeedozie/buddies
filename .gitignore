@@ -2,3 +2,4 @@ venv/
 lenv/
 __pycache__/
 *.pyc
+buddies/__pycache__/
