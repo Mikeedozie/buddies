@@ -99,20 +99,38 @@
         </div>
         <div class="store" id="shop">
          <h2 class="title">Members</h2>
-        
+        {% for person in members %}
         <div class="game-store">
-
           <div class="game-store-list">
             <div class="game-image">
               <img src="https://source.unsplash.com/dbgbyzFR8uI"/>
             </div>
             <div class="store-text-description">
-             <h4>Keyboard</h4>
+             <h4>{{ person.name }}</h4>
              <span> 12 items </span>
              <span>$9</span>
             </div>
 
           </div>
+          {% empty %}
+          
+          <div class="game-store">
+             <!-- <div class="game-store-list">
+              <div class="game-image"> 
+                <img src="https://source.unsplash.com/dbgbyzFR8uI"/>
+              </div>
+              <div class="store-text-description">
+               <h4>Keyboard</h4>
+               <span> 12 items </span>
+               <span>$9</span>
+              </div> -->
+              <p style="color: #fff">NO ACTIVE MEMBERS</p>
+            </div>
+          
+
+
+          {% endfor %}
+          <!-- 
           <div class="game-store-list">
             <div class="game-image">
               <img src="https://source.unsplash.com/qAgZDCgb7go"/>
@@ -167,9 +185,9 @@
               <span>$20</span>
             </div>
 
-          </div>
+          </div>-->
 
-        </div>
+        </div> 
       </div>
       <div class="event" id="events" >
         <h2 class="title">Upcoming Events</h2>
