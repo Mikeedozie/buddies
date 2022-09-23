@@ -10,6 +10,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <title>ALX-SE | BUDDIES</title>
+
+    <style>
+      .speciality-tag {
+        border: 1px solid #fff; 
+        padding: 5px;
+        display: inline-flex;
+        flex: 2;
+        cursor: pointer;
+      }
+      .speciality-header {
+        padding: 2px;
+      }
+      .name {
+        text-align: center;
+        font-size: 50px;
+      }
+      .game-store-list {
+        /*overflow: scroll;*/
+        width: auto;
+        height: auto;
+      }
+      .game-image {
+        width: auto;
+      }    
+      </style>
+
 </head>
 <body>
   <header style="position: relative;">
@@ -106,9 +132,16 @@
               <img src="https://source.unsplash.com/dbgbyzFR8uI"/>
             </div>
             <div class="store-text-description">
-             <h4>{{ person.name }}</h4>
-             <span> 12 items </span>
-             <span>$9</span>
+             <h4 class="name">{{ person.first_name }}</h4>
+             <div>
+               <div class='speciality-header' style="text-align: center;">Speciality</div>
+             {% for all in person.speciality.all %}
+             <div class='speciality-tag'>
+             {{ all.speciality }}
+            </div>
+            {% endfor %}
+          </div>
+             <!-- <span>$9</span> -->
             </div>
 
           </div>

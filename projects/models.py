@@ -40,7 +40,7 @@ class Member(models.Model):
     objects = MemberActive()
     
     def __str__(self):
-        return self.name
+        return self.first_name
 
 class ProfileImage(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="profile_images")
