@@ -4,12 +4,14 @@ from django.db import models
 #These are my models
 class SpecialityTags(models.Model):
     SPECIALITY_CHOICES = (
-        ('GIT/GITHUB', 'Git/Github'),
-        ('SHELL', 'Shell'),
-        ('EMACS', 'Emacs'),
+        ('Git/Github', 'Git/Github'),
+        ('Shell', 'Shell'),
+        ('Emacs', 'Emacs'),
         ('VI', 'Vi'),
         ('C', 'C'),
-        ('PYTHON', 'Python'),
+        ('Python', 'Python'),
+        ('Javascript', 'Javascript'),
+        ('Flask', 'Flask')
 
     )
     speciality = models.CharField(choices=SPECIALITY_CHOICES, max_length=100)
@@ -36,13 +38,12 @@ class Member(models.Model):
     gender = models.CharField(choices=GENDER_CHOICES, max_length=10)
     speciality = models.ManyToManyField(SpecialityTags, blank=True)
     active = models.BooleanField(default=False)
+    image = models.ImageField(upload_to="profile-images")
     date_joined = models.DateTimeField(auto_now_add=True)
     objects = MemberActive()
     
     def __str__(self):
         return self.first_name
 
-class ProfileImage(models.Model):
-    member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="profile_images")
-    image = models.ImageField(upload_to="profile-images")
+    
 
