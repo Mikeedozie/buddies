@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Member, ProfileImage, SpecialityTags
+from .models import Member, SpecialityTags
 
 
 # Create your views here.
