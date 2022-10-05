@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Member, SpecialityTags
+from .models import Member, SpecialityTags, Topic, Quiz
 # Register your models here.
 
 class MemberAdmin(admin.ModelAdmin):
@@ -8,5 +8,6 @@ class MemberAdmin(admin.ModelAdmin):
     list_editable = ('active',)
 
 admin.site.register(Member,MemberAdmin)
-
+admin.site.register(Topic)
+admin.site.register(Quiz)
 admin.site.register(SpecialityTags)

@@ -12,22 +12,6 @@
   <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <title>ALX-SE | BUDDIES</title>
 
-  <style>
-    .speciality-tag {
-      border: 1px solid #fff;
-      cursor: pointer;
-      padding: 2px;
-    }
-
-    .speciality-header {
-      padding: 1px;
-    }
-
-    .name {
-      text-align: center;
-      font-size: 30px;
-    }
-  </style>
 
 </head>
 
@@ -86,7 +70,17 @@
   <main style="padding-bottom:40px ;">
     <h2 class="title" id="games">List of Topics So Far</h2>
     <div class="games">
+
+      {% for topic in topics %}
       <div class="game-list">
+        <img src="{{ topic.image_url }}" alt=""
+          style="width:100px; height: 100px; color: white;" />
+        <h3>{{ topic.topics }}</h3>
+        <p></p>
+      </div>
+      {% endfor %}
+
+      <!-- <div class="game-list">
         <img src="https://alx-study-buddies.w3spaces.com/github-svgrepo-com.svg" alt="playstation-brands"
           style="width:100px; height: 100px; color: white;" />
         <h3>Git/Github</h3>
@@ -111,7 +105,7 @@
         <img src="./img/vim-svgrepo-com.svg" alt="joker" style="width:100px; height: 100px;" />
         <h3>VI</h3>
         <p></p>
-      </div>
+      </div> -->
       <!--<div class="game-list">
               <img src="img/halloween.svg" alt="halloween" style="width:100px; height: 100px;"/>
             <h3>Halloween</h3>
@@ -126,38 +120,41 @@
       <div class="game-store">
         <div class="game-store-list">
           <div class="game-image">
-            <img src="{{ person.image.url }}" />
+            {% if person.image %}
+            <a href="{{ person.image.url }}" blank=True><img src="{{ person.image.url }}" /></a>
+            {% endif %}
             <!-- https://source.unsplash.com/dbgbyzFR8uI -->
           </div>
           <div class="store-text-description">
             <h4 class="name">{{ person.first_name }}</h4>
             <div>
               <div class='speciality-header' style="text-align: center;">Speciality</div>
-              
+
               {% for all in person.speciality.all %}
               <span class="speciality-tag">
                 {{ all.speciality }}
               </span>
               {% endfor %}
-            
             </div>
-            <!-- <span>$9</span> -->
-          </div>
 
-        
+          </div>
+          <!-- <span>$9</span> -->
+        </div>
+
+
         {% empty %}
 
         <div class="game-store">
 
           <p style="color: #fff">NO ACTIVE MEMBERS</p>
         </div>
- 
 
-
-        {% endfor %}
-       
 
       </div>
+        {% endfor %}
+
+
+      
     </div>
     <div class="event" id="events">
       <h2 class="title">Upcoming Events</h2>
@@ -198,7 +195,7 @@
     </div>
     <div>
 
-    
+
 
   </main>
 
