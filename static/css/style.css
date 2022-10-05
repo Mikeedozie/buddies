@@ -135,7 +135,7 @@ h3{
     justify-content: space-evenly;
 }
 .game-image{
-    width:300px;
+    width: 300px;
     height: 180px;
     
 }
@@ -145,10 +145,10 @@ h3{
     object-fit: cover;
 }
 .game-store-list{
-    width: auto;
-    height: auto;
+    width: 300px;
+    height: 300px;
      margin: 20px;
-    overflow: hidden;
+    overflow: visible;
     border-top: none;
     
       -webkit-box-shadow: 0 8px 40px 0 rgba(45, 57, 231, 0.37);
@@ -163,7 +163,7 @@ h3{
      
 padding-left:20px;
 display: flex;
-flex-direction: column;
+flex-direction: row;
      
 } 
 h4{

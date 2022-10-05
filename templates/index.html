@@ -16,6 +16,7 @@
     .speciality-tag {
       border: 1px solid #fff;
       cursor: pointer;
+      padding: 2px;
     }
 
     .speciality-header {
@@ -133,7 +134,7 @@
             <div>
               <div class='speciality-header' style="text-align: center;">Speciality</div>
               {% for all in person.speciality.all %}
-              <span class='speciality-tag'>
+              <span class="speciality-tag">
                 {{ all.speciality }}
               </span>
               {% endfor %}
@@ -141,14 +142,14 @@
             <!-- <span>$9</span> -->
           </div>
 
-        </div>
+        
         {% empty %}
 
         <div class="game-store">
 
           <p style="color: #fff">NO ACTIVE MEMBERS</p>
         </div>
-
+ 
 
 
         {% endfor %}
