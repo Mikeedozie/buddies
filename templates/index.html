@@ -16,10 +16,14 @@
     .speciality-tag {
       border: 1px solid #fff;
       cursor: pointer;
+      padding: 6px;
+      display: inline-block;
+      flex-wrap: wrap;
+      
     }
 
     .speciality-header {
-      padding: 2px;
+      padding: 1px;
     }
 
     .name {
@@ -132,11 +136,13 @@
             <h4 class="name">{{ person.first_name }}</h4>
             <div>
               <div class='speciality-header' style="text-align: center;">Speciality</div>
+              
               {% for all in person.speciality.all %}
-              <span class='speciality-tag'>
-                {{ all.speciality }}
-              </span>
+              
+              <span class='speciality-tag'>{{ all.speciality }}</span>
+            
               {% endfor %}
+            
             </div>
             <!-- <span>$9</span> -->
           </div>
