@@ -16,10 +16,7 @@
     .speciality-tag {
       border: 1px solid #fff;
       cursor: pointer;
-      padding: 6px;
-      display: inline-block;
-      flex-wrap: wrap;
-      
+      padding: 2px;
     }
 
     .speciality-header {
@@ -138,23 +135,23 @@
               <div class='speciality-header' style="text-align: center;">Speciality</div>
               
               {% for all in person.speciality.all %}
-              
-              <span class='speciality-tag'>{{ all.speciality }}</span>
-            
+              <span class="speciality-tag">
+                {{ all.speciality }}
+              </span>
               {% endfor %}
             
             </div>
             <!-- <span>$9</span> -->
           </div>
 
-        </div>
+        
         {% empty %}
 
         <div class="game-store">
 
           <p style="color: #fff">NO ACTIVE MEMBERS</p>
         </div>
-
+ 
 
 
         {% endfor %}
