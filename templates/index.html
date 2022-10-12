@@ -71,13 +71,17 @@
     <h2 class="title" id="games">List of Topics So Far</h2>
     <div class="games">
 
+      
       {% for topic in topics %}
-      <div class="game-list">
-        <img src="{{ topic.image_url }}" alt=""
+      <a href="{% url 'topic' topic.id %}">
+        <div class="game-list">
+          <img src="{{ topic.image_url }}" alt=""
           style="width:100px; height: 100px; color: white;" />
-        <h3>{{ topic.topics }}</h3>
-        <p></p>
-      </div>
+          <h3>{{ topic.topics }}</h3>
+          <p></p>
+      
+         </div>
+      </a>
       {% endfor %}
 
       <!-- <div class="game-list">

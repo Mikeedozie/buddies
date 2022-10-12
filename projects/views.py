@@ -9,3 +9,8 @@ def index(request):
     topics = Topic.objects.all()
     context = {'members': members, 'topics': topics}
     return render(request, 'index.html', context)
+
+def topic(request, id):
+    topic = Topic.objects.get(id=id)
+    context = {'topic': topic}
+    return render(request, 'topic.html', context)
