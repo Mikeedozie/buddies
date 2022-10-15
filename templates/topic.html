@@ -1,20 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
+<head>
+    <title>{% block title %}{{ topic.topics }}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/css/topics.css' %}" />
+</head>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}{{ topic.topics }}{% endblock %}</title>
-    </head>
-
-    <body>
-        
-        <div>
-       
-        <h3 style="color: white; font-size: 100%;">Home</h1>
-    
+<body>
+    <div class="row">
+        <div class="column">
+            <h1 class="topic_name">{{ topic.topics }}</h1>
+            <section class="overview">
+                <div class="description">
+                    <h2 class="overview_head">Overview</h2>
+                    <p>
+                        {% for overviews in topic.overview.all %}
+                        {{ overviews.description | linebreaks }}
+                        {% endfor %}
+                    </p>
+                    <p>
+                        This is what git and github entails.
+                    </p>
+                    {% lorem %}
+                    {% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem
+                    %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}{% lorem %}
+                </div>
+            </section>
+            <section class="concepts">
+                <h2 class="overview_head">Concepts</h2>
+            </section>
         </div>
-    </body>
-</html>
+    </div>
+
+</body>
+
+
+
+
+
 {% endblock %}

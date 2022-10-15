@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <header style="position: fixed;">
+  <header style="position: relative;">
 
     <div class="w3-top" class="header" id="home">
       <div class="w3-bar  w3-card w3-left-align w3-large heeder-large-screen" style="background-color: #000015;">
@@ -45,12 +45,12 @@
       </div>
     </header>
 
-    <main style="padding-bottom:40px ;">
-    {% block content %}
+    <main style="padding:40px ;">
+      {% block content %}
 
-    {% endblock %}
+      {% endblock %}
 
-  </main>
+    </main>
   <script>
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {

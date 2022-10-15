@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Member, SpecialityTags, Topic, Quiz
+from .models import Member, SpecialityTags, Topic, Quiz, TopicOverview
 # Register your models here.
 
 class MemberAdmin(admin.ModelAdmin):
@@ -9,5 +9,6 @@ class MemberAdmin(admin.ModelAdmin):
 
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Topic)
+admin.site.register(TopicOverview)
 admin.site.register(Quiz)
 admin.site.register(SpecialityTags)
